@@ -11,6 +11,9 @@
 		CEF4CF622BBDA4F70076F4CD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF612BBDA4F70076F4CD /* MainView.swift */; };
 		CEF4CF642BBDA5000076F4CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF632BBDA5000076F4CD /* Assets.xcassets */; };
 		CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */; };
+		CEF4CF752BBDCFE80076F4CD /* PokemonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */; };
+		CEF4CF772BBDD11F0076F4CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF762BBDD11F0076F4CD /* Constants.swift */; };
+		CEF4CF792BBDD3680076F4CD /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF782BBDD3680076F4CD /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +21,11 @@
 		CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogApp.swift; sourceTree = "<group>"; };
 		CEF4CF612BBDA4F70076F4CD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CEF4CF632BBDA5000076F4CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEF4CF652BBDA5000076F4CD /* PokemonCatalog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PokemonCatalog.entitlements; sourceTree = "<group>"; };
 		CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDTO.swift; sourceTree = "<group>"; };
+		CEF4CF762BBDD11F0076F4CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEF4CF782BBDD3680076F4CD /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		CEF4CF7A2BBDF4CE0076F4CD /* PokemonCatalog.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PokemonCatalog.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF4CF6E2BBDA50A0076F4CD /* App */,
+				CEF4CF7A2BBDF4CE0076F4CD /* PokemonCatalog.entitlements */,
 				CEF4CF662BBDA5000076F4CD /* Preview Content */,
 			);
 			path = PokemonCatalog;
@@ -70,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */,
-				CEF4CF652BBDA5000076F4CD /* PokemonCatalog.entitlements */,
 				CEF4CF6F2BBDA50F0076F4CD /* Main */,
 				CEF4CF702BBDA53F0076F4CD /* Utils */,
 			);
@@ -81,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				CEF4CF612BBDA4F70076F4CD /* MainView.swift */,
+				CEF4CF732BBDCF9A0076F4CD /* Views */,
+				CEF4CF712BBDCF690076F4CD /* Model */,
+				CEF4CF722BBDCF860076F4CD /* Managers */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -88,9 +97,33 @@
 		CEF4CF702BBDA53F0076F4CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CEF4CF762BBDD11F0076F4CD /* Constants.swift */,
 				CEF4CF632BBDA5000076F4CD /* Assets.xcassets */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CEF4CF712BBDCF690076F4CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */,
+				CEF4CF782BBDD3680076F4CD /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEF4CF722BBDCF860076F4CD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEF4CF732BBDCF9A0076F4CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF4CF792BBDD3680076F4CD /* Pokemon.swift in Sources */,
 				CEF4CF622BBDA4F70076F4CD /* MainView.swift in Sources */,
 				CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */,
+				CEF4CF752BBDCFE80076F4CD /* PokemonDTO.swift in Sources */,
+				CEF4CF772BBDD11F0076F4CD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -278,6 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -291,6 +329,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PokemonCatalog/PokemonCatalog.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PokemonCatalog/Preview Content\"";
@@ -308,15 +347,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = naore.PokemonCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,6 +369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PokemonCatalog/PokemonCatalog.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PokemonCatalog/Preview Content\"";
@@ -346,15 +387,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = naore.PokemonCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
