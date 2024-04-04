@@ -5,34 +5,34 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
 // MARK: - PokemonList
-class PokemonList {
+final class PokemonList {
     let count: Int
     let next: String?
     let previous: String?
     let results: [Result]?
     
-    init(count: Int, next: String?, previous: String?, results: [Result]?) {
-        self.count = count
-        self.next = next
-        self.previous = previous
-        self.results = results
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        count = try container.decode(Int.self, forKey: .count)
+        next = try container.decodeIfPresent(String.self, forKey: .next)
+        previous = try container.decodeIfPresent(String.self, forKey: .previous)
+        results = try container.decodeIfPresent([Result].self, forKey: .results)
     }
-    
-    convenience init(item: PokemonList) {
-        self.init(count: item.count,
-                  next: item.next,
-                  previous: item.previous,
-                  results: item.results)
+}
+
+extension PokemonList: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case count, next, previous, results
     }
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result {
     let name: String
     let url: String
 }
+
+extension Result: Decodable {}
 
