@@ -29,7 +29,7 @@ extension PokemonList: Decodable {
 }
 
 // MARK: - Result
-struct Result {
+struct Result: Hashable {
     let name: String
     let url: String
 }
