@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0298BB2BBEE56A0095992C /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298BA2BBEE56A0095992C /* PokemonList.swift */; };
+		CE0298BF2BBEE6010095992C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298BE2BBEE6000095992C /* Pokemon.swift */; };
 		CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */; };
 		CEF4CF622BBDA4F70076F4CD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF612BBDA4F70076F4CD /* MainView.swift */; };
 		CEF4CF642BBDA5000076F4CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF632BBDA5000076F4CD /* Assets.xcassets */; };
 		CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */; };
-		CEF4CF752BBDCFE80076F4CD /* PokemonDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */; };
 		CEF4CF772BBDD11F0076F4CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF762BBDD11F0076F4CD /* Constants.swift */; };
-		CEF4CF792BBDD3680076F4CD /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF782BBDD3680076F4CD /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0298BA2BBEE56A0095992C /* PokemonList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokemonList.swift; path = PokemonCatalog/App/Main/Model/PokemonList.swift; sourceTree = SOURCE_ROOT; };
+		CE0298BE2BBEE6000095992C /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		CEF4CF5C2BBDA4F70076F4CD /* PokemonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogApp.swift; sourceTree = "<group>"; };
 		CEF4CF612BBDA4F70076F4CD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CEF4CF632BBDA5000076F4CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDTO.swift; sourceTree = "<group>"; };
 		CEF4CF762BBDD11F0076F4CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CEF4CF782BBDD3680076F4CD /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		CEF4CF7A2BBDF4CE0076F4CD /* PokemonCatalog.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PokemonCatalog.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +106,8 @@
 		CEF4CF712BBDCF690076F4CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEF4CF742BBDCFE80076F4CD /* PokemonDTO.swift */,
-				CEF4CF782BBDD3680076F4CD /* Pokemon.swift */,
+				CE0298BA2BBEE56A0095992C /* PokemonList.swift */,
+				CE0298BE2BBEE6000095992C /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,8 +122,16 @@
 		CEF4CF732BBDCF9A0076F4CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEF4CF7B2BBED86D0076F4CD /* ViewModels */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CEF4CF7B2BBED86D0076F4CD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,10 +204,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF4CF792BBDD3680076F4CD /* Pokemon.swift in Sources */,
 				CEF4CF622BBDA4F70076F4CD /* MainView.swift in Sources */,
+				CE0298BB2BBEE56A0095992C /* PokemonList.swift in Sources */,
 				CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */,
-				CEF4CF752BBDCFE80076F4CD /* PokemonDTO.swift in Sources */,
+				CE0298BF2BBEE6010095992C /* Pokemon.swift in Sources */,
 				CEF4CF772BBDD11F0076F4CD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +355,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
@@ -387,7 +395,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
