@@ -33,7 +33,7 @@ struct PokemonCatalogView: View {
                     )
                 }
             } else {
-                Text("No pokemons :(")
+                Text(Constants.Strings.noPokemon)
             }
         }.task {
             await viewModel.loadPokemons()

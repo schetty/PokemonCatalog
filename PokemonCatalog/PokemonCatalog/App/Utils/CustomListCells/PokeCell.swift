@@ -13,7 +13,7 @@ struct PokeCell: View {
     
     var body: some View {
         HStack {
-            Image("icons8-pokemon-32")
+            Image(Constants.Images.pokemonIcon32)
                 .foregroundStyle(.crayolaorange)
             
             Text(pokemonName)

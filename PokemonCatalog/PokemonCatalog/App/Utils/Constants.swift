@@ -16,4 +16,12 @@ struct Constants {
     struct URLs {
         static let pokemonAPIURL = "https://pokeapi.co/api/v2/pokemon/"
     }
+    
+    struct Strings {
+        static let noPokemon = "No pokemons 😞"
+    }
+    
+    struct Images {
+        static let pokemonIcon32 = "icons8-pokemon-32"
+    }
 }
