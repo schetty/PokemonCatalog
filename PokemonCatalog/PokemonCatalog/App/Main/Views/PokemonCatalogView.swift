@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  PokemonCatalog
 //
-//  Created by User on 4/3/24.
+//  Created by Naomi on 4/3/24.
 //
 
 import SwiftUI
@@ -15,7 +15,22 @@ struct PokemonCatalogView: View {
         NavigationStack {
             if let pokemons = viewModel.pokemonList?.results {
                 List(pokemons, id: \.self) { pokemon in
-                    Text(pokemon.name)
+                    PokeCell(pokemonName: pokemon.name)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 21)
+                            .strokeBorder(.greenyellow)
+                            .background(
+                                RoundedRectangle(cornerRadius: 21).fill(.lavender))
+                            .padding(
+                                EdgeInsets(
+                                    top: 8,
+                                    leading: 5,
+                                    bottom: 8,
+                                    trailing: 5
+                                )
+                            )
+                    )
                 }
             } else {
                 Text("No pokemons :(")

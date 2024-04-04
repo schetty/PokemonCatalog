@@ -2,7 +2,7 @@
 //  PokemonCatalogViewModel.swift
 //  PokemonCatalog
 //
-//  Created by User on 4/4/24.
+//  Created by Naomi on 4/4/24.
 //
 
 import Foundation
