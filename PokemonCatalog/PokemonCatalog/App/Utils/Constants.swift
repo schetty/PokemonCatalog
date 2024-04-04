@@ -23,5 +23,7 @@ struct Constants {
     
     struct Images {
         static let pokemonIcon32 = "icons8-pokemon-32"
+        static let pokeBall = "icons8-pokemon-100"
+        static let search = "icons8-search"
     }
 }

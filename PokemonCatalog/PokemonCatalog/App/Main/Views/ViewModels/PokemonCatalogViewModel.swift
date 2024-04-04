@@ -11,6 +11,7 @@ import SwiftUI
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList: PokemonList?
     @Published var pokemonDetails: Pokemon?
+    @Published var searchText = ""
     
     private let apiManager = APIManager()
     

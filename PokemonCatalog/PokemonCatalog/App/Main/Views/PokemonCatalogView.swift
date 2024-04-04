@@ -13,6 +13,8 @@ struct PokemonCatalogView: View {
     
     var body: some View {
         NavigationStack {
+            
+            SearchBar(text: $viewModel.searchText, placeholderText: "search Pokemon")
             if let pokemons = viewModel.pokemonList?.results {
                 List(pokemons, id: \.self) { pokemon in
                     PokeCell(pokemonName: pokemon.name)
