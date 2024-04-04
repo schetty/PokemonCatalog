@@ -20,11 +20,9 @@ struct PokemonCatalogView: View {
             } else {
                 Text("No pokemons :(")
             }
-        }.onAppear(perform: {
-            Task {
-                await viewModel.loadPokemons()
-            }
-        })
+        }.task {
+            await viewModel.loadPokemons()
+        }
     }
 }
 
