@@ -2,7 +2,7 @@
 //  PokemonCatalogApp.swift
 //  PokemonCatalog
 //
-//  Created by User on 4/3/24.
+//  Created by Naomi on 4/3/24.
 //
 
 import SwiftUI
