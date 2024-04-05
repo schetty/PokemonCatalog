@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct PokeLoader: View {
-    @State private var animationAmount = 1.0
+    @State private var animationAmount: CGFloat = 1.0
     
     var body: some View {
         ZStack {
-            Color.white.opacity(0.5)
-                .edgesIgnoringSafeArea(.all)
-            
             Image(Constants.Images.pokeBall)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
-                .rotationEffect(.degrees(360))
-                .animation(
-                    .easeInOut(duration: 2)
-                        .repeatForever(autoreverses: false),
-                    value: animationAmount
-                )
+                .frame(width: 100 * animationAmount,
+                       height: 100 * animationAmount)
+                .onAppear {
+                    withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                        animationAmount = 1.2
+                    }
+                }
         }
     }
 }

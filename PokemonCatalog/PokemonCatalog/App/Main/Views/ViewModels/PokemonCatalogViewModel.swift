@@ -11,14 +11,13 @@ import SwiftUI
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList: PokemonList?
     @Published var searchText = ""
-    private var loadedPokemons: [Result] = []
+    var loadedPokemons: [Result] = []
     
     var filteredPokemons: [Result]? {
         if searchText.isEmpty {
             return loadedPokemons
         } else {
-            guard let results = pokemonList?.results else { return [] }
-            return results.filter { $0.name.lowercased().contains(searchText.lowercased())
+            return loadedPokemons.filter { $0.name.lowercased().contains(searchText.lowercased())
             }
         }
     }
