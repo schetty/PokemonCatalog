@@ -13,10 +13,10 @@
 		CE0298C32BBF09850095992C /* PokemonCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298C22BBF09850095992C /* PokemonCatalogViewModel.swift */; };
 		CE0298C62BBF40730095992C /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298C52BBF40730095992C /* RoundedCorner.swift */; };
 		CE0298C92BBF40A10095992C /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298C82BBF40A10095992C /* PokeCell.swift */; };
-		CE0298CB2BBF41310095992C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0298CA2BBF41300095992C /* Assets.xcassets */; };
 		CE0298CE2BBF58F70095992C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298CD2BBF58F70095992C /* SearchBar.swift */; };
 		CE0298D02BBFE8C10095992C /* PokemonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298CF2BBFE8C10095992C /* PokemonDetailsView.swift */; };
 		CE0298D22BBFEA530095992C /* PokemonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298D12BBFEA530095992C /* PokemonDetailsViewModel.swift */; };
+		CE0298D42BBFFA2D0095992C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0298D32BBFFA2D0095992C /* Assets.xcassets */; };
 		CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */; };
 		CEF4CF622BBDA4F70076F4CD /* PokemonCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF612BBDA4F70076F4CD /* PokemonCatalogView.swift */; };
 		CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */; };
@@ -30,10 +30,10 @@
 		CE0298C22BBF09850095992C /* PokemonCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogViewModel.swift; sourceTree = "<group>"; };
 		CE0298C52BBF40730095992C /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		CE0298C82BBF40A10095992C /* PokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
-		CE0298CA2BBF41300095992C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/pokeapp/Assets.xcassets; sourceTree = "<group>"; };
 		CE0298CD2BBF58F70095992C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		CE0298CF2BBFE8C10095992C /* PokemonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsView.swift; sourceTree = "<group>"; };
 		CE0298D12BBFEA530095992C /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
+		CE0298D32BBFFA2D0095992C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF4CF5C2BBDA4F70076F4CD /* PokemonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogApp.swift; sourceTree = "<group>"; };
 		CEF4CF612BBDA4F70076F4CD /* PokemonCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogView.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				CE0298C72BBF40890095992C /* CustomListCells */,
 				CE0298C42BBF40570095992C /* Style */,
 				CEF4CF762BBDD11F0076F4CD /* Constants.swift */,
-				CE0298CA2BBF41300095992C /* Assets.xcassets */,
+				CE0298D32BBFFA2D0095992C /* Assets.xcassets */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -237,8 +237,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0298D42BBFFA2D0095992C /* Assets.xcassets in Resources */,
 				CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */,
-				CE0298CB2BBF41310095992C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
