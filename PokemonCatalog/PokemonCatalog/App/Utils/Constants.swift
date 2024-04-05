@@ -27,4 +27,9 @@ struct Constants {
         static let pokeBall = "icons8-pokemon-100"
         static let search = "icons8-search"
     }
+    
+    struct Fonts {
+        static let gameFont = "04B_30__.ttf"
+        static let minecraft = "Minecraft.ttf"
+    }
 }

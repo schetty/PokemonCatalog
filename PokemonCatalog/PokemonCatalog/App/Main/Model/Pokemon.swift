@@ -4,12 +4,12 @@
 //
 //  Created by Naomi on 4/3/24.
 //
-//   let pokemon = try? JSONDecoder().decode(Pokemon.self, from: jsonData)
 
 import Foundation
+import SwiftData
 
 // MARK: - Pokemon Statistics
-struct Pokemon: Identifiable {
+final class Pokemon: Identifiable {
     let abilities: [Ability]?
     let baseExperience: Int?
     let cries: Cries?
@@ -50,6 +50,8 @@ struct Pokemon: Identifiable {
         weight = try container.decode(Int.self, forKey: .weight)
     }
 }
+
+// separate all Codable coupling from the data object model
 
 extension Pokemon: Decodable {
     enum CodingKeys: String, CodingKey {

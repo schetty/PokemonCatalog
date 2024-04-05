@@ -9,10 +9,10 @@ import Foundation
 
 class APIManager {
     
-    func fetchPokemons(offset: Int?, limit: Int?) async throws -> PokemonList? {
+    func fetchPokemons(next: String?) async throws -> PokemonList? {
         var url = URL(string: Constants.URLs.pokemonAPIURL)!
-        if let off = offset, let lim = limit {
-            url = URL(string: Constants.URLs.pokemonAPIURL + ("?offset=\(off))&limit=\(lim)"))!
+        if let nextURL = next {
+            url = URL(string: nextURL)!
         }
         let (data, _) = try await URLSession.shared.data(from: url)
         let list = try JSONDecoder().decode(PokemonList.self, from: data)

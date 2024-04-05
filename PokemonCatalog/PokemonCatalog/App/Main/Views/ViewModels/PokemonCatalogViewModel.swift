@@ -13,9 +13,11 @@ class PokemonViewModel: ObservableObject {
     @Published var searchText = ""
     private let apiManager = APIManager()
     
+    private var loadedPokemons: [Result] = []
+    
     var filteredPokemons: [Result]? {
         if searchText.isEmpty {
-            return pokemonList?.results
+            return loadedPokemons
         } else {
             guard let results = pokemonList?.results else { return [] }
             return results.filter { $0.name.lowercased().contains(searchText.lowercased())
@@ -23,15 +25,20 @@ class PokemonViewModel: ObservableObject {
         }
     }
     
-    func loadPokemons(offset: Int? = nil, limit: Int? = nil) async {
+    func loadPokemons(next: String? = nil) async {
         do {
-            let pokemonList = try await apiManager.fetchPokemons(offset: offset, limit: limit)
+            let pokemonList = try await apiManager.fetchPokemons(next: next)
             DispatchQueue.main.async {
                 self.pokemonList = pokemonList
+                self.loadedPokemons += pokemonList?.results ?? []
             }
         } catch {
             print("Failed to fetch pokemons: \(error)")
         }
     }
+    
+    func loadMorePokemons(next: String) async {
+        await loadPokemons(next: next)
+      }
 }
 

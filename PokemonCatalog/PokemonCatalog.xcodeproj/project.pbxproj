@@ -17,6 +17,10 @@
 		CE0298D02BBFE8C10095992C /* PokemonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298CF2BBFE8C10095992C /* PokemonDetailsView.swift */; };
 		CE0298D22BBFEA530095992C /* PokemonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298D12BBFEA530095992C /* PokemonDetailsViewModel.swift */; };
 		CE0298D42BBFFA2D0095992C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0298D32BBFFA2D0095992C /* Assets.xcassets */; };
+		CE0298D62BC00C330095992C /* PokeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0298D52BC00C330095992C /* PokeLoader.swift */; };
+		CE0298D92BC024300095992C /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = CE0298D82BC024300095992C /* Marquee */; };
+		CE0298DC2BC025320095992C /* 04B_30__.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE0298DB2BC025320095992C /* 04B_30__.ttf */; };
+		CED817A72BC02D6000C28A42 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CED817A62BC02D6000C28A42 /* Minecraft.ttf */; };
 		CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */; };
 		CEF4CF622BBDA4F70076F4CD /* PokemonCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4CF612BBDA4F70076F4CD /* PokemonCatalogView.swift */; };
 		CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4CF672BBDA5000076F4CD /* Preview Assets.xcassets */; };
@@ -34,6 +38,9 @@
 		CE0298CF2BBFE8C10095992C /* PokemonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsView.swift; sourceTree = "<group>"; };
 		CE0298D12BBFEA530095992C /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
 		CE0298D32BBFFA2D0095992C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0298D52BC00C330095992C /* PokeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeLoader.swift; sourceTree = "<group>"; };
+		CE0298DB2BC025320095992C /* 04B_30__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_30__.ttf; sourceTree = "<group>"; };
+		CED817A62BC02D6000C28A42 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		CEF4CF5C2BBDA4F70076F4CD /* PokemonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogApp.swift; sourceTree = "<group>"; };
 		CEF4CF612BBDA4F70076F4CD /* PokemonCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogView.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0298D92BC024300095992C /* Marquee in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +64,9 @@
 		CE0298C42BBF40570095992C /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				CE0298DA2BC025270095992C /* Fonts */,
 				CE0298C52BBF40730095992C /* RoundedCorner.swift */,
+				CE0298D52BC00C330095992C /* PokeLoader.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -75,6 +85,15 @@
 				CE0298CD2BBF58F70095992C /* SearchBar.swift */,
 			);
 			path = CustomComponent;
+			sourceTree = "<group>";
+		};
+		CE0298DA2BC025270095992C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CED817A62BC02D6000C28A42 /* Minecraft.ttf */,
+				CE0298DB2BC025320095992C /* 04B_30__.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CEF4CF532BBDA4F70076F4CD = {
@@ -195,6 +214,9 @@
 			dependencies = (
 			);
 			name = PokemonCatalog;
+			packageProductDependencies = (
+				CE0298D82BC024300095992C /* Marquee */,
+			);
 			productName = PokemonCatalog;
 			productReference = CEF4CF5C2BBDA4F70076F4CD /* PokemonCatalog.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +245,9 @@
 				Base,
 			);
 			mainGroup = CEF4CF532BBDA4F70076F4CD;
+			packageReferences = (
+				CE0298D72BC024300095992C /* XCRemoteSwiftPackageReference "Marquee" */,
+			);
 			productRefGroup = CEF4CF5D2BBDA4F70076F4CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0298D42BBFFA2D0095992C /* Assets.xcassets in Resources */,
+				CE0298DC2BC025320095992C /* 04B_30__.ttf in Resources */,
+				CED817A72BC02D6000C28A42 /* Minecraft.ttf in Resources */,
 				CEF4CF682BBDA5000076F4CD /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +284,7 @@
 				CEF4CF602BBDA4F70076F4CD /* PokemonCatalogApp.swift in Sources */,
 				CE0298BF2BBEE6010095992C /* Pokemon.swift in Sources */,
 				CE0298D22BBFEA530095992C /* PokemonDetailsViewModel.swift in Sources */,
+				CE0298D62BC00C330095992C /* PokeLoader.swift in Sources */,
 				CE0298C92BBF40A10095992C /* PokeCell.swift in Sources */,
 				CE0298CE2BBF58F70095992C /* SearchBar.swift in Sources */,
 				CEF4CF772BBDD11F0076F4CD /* Constants.swift in Sources */,
@@ -485,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE0298D72BC024300095992C /* XCRemoteSwiftPackageReference "Marquee" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIKit/Marquee";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE0298D82BC024300095992C /* Marquee */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0298D72BC024300095992C /* XCRemoteSwiftPackageReference "Marquee" */;
+			productName = Marquee;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEF4CF542BBDA4F70076F4CD /* Project object */;
 }

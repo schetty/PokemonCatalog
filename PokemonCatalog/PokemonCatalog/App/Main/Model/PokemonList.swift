@@ -5,8 +5,11 @@
 //
 
 import Foundation
+import SwiftData
 
 // MARK: - PokemonList
+
+// in order to use Swift Data, your classes need to be final meaning they cannot be overwritten or subclassed
 final class PokemonList {
     let count: Int
     let next: String?
