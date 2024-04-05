@@ -11,8 +11,6 @@ import SwiftUI
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList: PokemonList?
     @Published var searchText = ""
-    private let apiManager = APIManager()
-    
     private var loadedPokemons: [Result] = []
     
     var filteredPokemons: [Result]? {
@@ -27,7 +25,7 @@ class PokemonViewModel: ObservableObject {
     
     func loadPokemons(next: String? = nil) async {
         do {
-            let pokemonList = try await apiManager.fetchPokemons(next: next)
+            let pokemonList = try await APIManager.shared.fetchPokemons(next: next)
             DispatchQueue.main.async {
                 self.pokemonList = pokemonList
                 self.loadedPokemons += pokemonList?.results ?? []

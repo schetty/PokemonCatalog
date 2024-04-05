@@ -29,7 +29,7 @@ struct Constants {
     }
     
     struct Fonts {
-        static let gameFont = "04B_30__.ttf"
-        static let minecraft = "Minecraft.ttf"
+        static let gameFont = "04B_30__"
+        static let minecraft = "Minecraft"
     }
 }

@@ -11,11 +11,9 @@ import SwiftUI
 class PokemonDetailsViewModel: ObservableObject {
     @Published var pokemon: Pokemon?
     
-    private let apiManager = APIManager()
-
     func loadPokemonDetails(url: String) async {
         do {
-            let pokemonDetails = try await apiManager.fetchPokemonDetails(url: url)
+            let pokemonDetails = try await APIManager.shared.fetchPokemonDetails(url: url)
             DispatchQueue.main.async {
                 self.pokemon = pokemonDetails
             }

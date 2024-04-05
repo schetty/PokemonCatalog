@@ -12,6 +12,7 @@ struct PokemonCatalogView: View {
     @StateObject private var viewModel: PokemonViewModel = PokemonViewModel()
     @State private var selectedPokemon: Result?
     @State private var isLoading: Bool = true
+    @State private var isFinished = false
     
     var body: some View {
         NavigationStack {
@@ -20,12 +21,12 @@ struct PokemonCatalogView: View {
             } else {
                 SearchBar(text: $viewModel.searchText,
                           placeholderText: Constants.Strings.searchPokemon)
- 
                 if let pokemons = viewModel.filteredPokemons {
                     ScrollViewReader { scrollView in
                         List {
                             ForEach(pokemons, id: \.self) { pokemon in
-                                PokeCell(pokemonName: pokemon.name, onShowDetails: {
+                                PokeCell(pokemonName: pokemon.name,
+                                         onShowDetails: {
                                     selectedPokemon = pokemon
                                 })
                                 .listRowSeparator(.hidden)
@@ -46,41 +47,40 @@ struct PokemonCatalogView: View {
                                 .id(pokemon)
                                 .onAppear {
                                     if pokemon == pokemons.last {
-                                        if let list = viewModel.pokemonList, let next = list.next {
-                                            isLoading = true
-                                            Task {
-                                                await viewModel.loadMorePokemons(next: next)
-                                                isLoading = false
-                                                
-                                                // Scroll to the last item
-                                                if let lastPokemon = viewModel.filteredPokemons?.last {
-                                                    withAnimation {
-                                                        scrollView.scrollTo(lastPokemon)
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            // insert an alert here to say no more pokemons
+                                        if let list = viewModel.pokemonList {
+                                            if list.count != pokemons.count {
+                                               loadMore()
+                                           }
                                         }
                                     }
                                 }
                             }
                         }
-                    }.navigationDestination(item: $selectedPokemon) { pokemon in
-                        PokemonDetailsView(pokemon: pokemon)
+                        .navigationDestination(item: $selectedPokemon) { pokemon in
+                            PokemonDetailsView(pokemon: pokemon)
+                        }
                     }
                 } else {
                     Text(Constants.Strings.noPokemon)
                 }
             }
         }.background(.lavender).ignoresSafeArea()
-        .task {
-            await viewModel.loadPokemons()
-            isLoading = false
+            .task {
+                await viewModel.loadPokemons()
+                isLoading = false
+            }
+    }
+    
+    private func loadMore() {
+        Task {
+            isLoading = true
+            if let next = viewModel.pokemonList?.next {
+                await viewModel.loadMorePokemons(next: next)
+                isLoading = false
+            }
         }
     }
 }
-
 
 #Preview {
     PokemonCatalogView()

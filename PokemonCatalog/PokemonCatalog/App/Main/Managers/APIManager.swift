@@ -9,6 +9,8 @@ import Foundation
 
 class APIManager {
     
+    static let shared = APIManager()
+    
     func fetchPokemons(next: String?) async throws -> PokemonList? {
         var url = URL(string: Constants.URLs.pokemonAPIURL)!
         if let nextURL = next {

@@ -10,7 +10,6 @@ import SwiftData
 
 // MARK: - Pokemon Statistics
 final class Pokemon: Identifiable, Hashable {
-    
     let abilities: [Ability]?
     let baseExperience: Int?
     let cries: Cries?

@@ -43,6 +43,7 @@
 		CE0298DB2BC025320095992C /* 04B_30__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_30__.ttf; sourceTree = "<group>"; };
 		CED817A62BC02D6000C28A42 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		CED817A82BC02FDE00C28A42 /* PokeDeetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDeetsCell.swift; sourceTree = "<group>"; };
+		CED817AD2BC049E800C28A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEF4CF5C2BBDA4F70076F4CD /* PokemonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF4CF5F2BBDA4F70076F4CD /* PokemonCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogApp.swift; sourceTree = "<group>"; };
 		CEF4CF612BBDA4F70076F4CD /* PokemonCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCatalogView.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		CEF4CF5E2BBDA4F70076F4CD /* PokemonCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				CED817AD2BC049E800C28A42 /* Info.plist */,
 				CEF4CF6E2BBDA50A0076F4CD /* App */,
 				CEF4CF7A2BBDF4CE0076F4CD /* PokemonCatalog.entitlements */,
 				CEF4CF662BBDA5000076F4CD /* Preview Content */,
@@ -437,6 +439,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokemonCatalog/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -477,6 +480,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokemonCatalog/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

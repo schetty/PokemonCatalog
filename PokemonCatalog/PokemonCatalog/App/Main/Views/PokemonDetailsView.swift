@@ -66,13 +66,12 @@ struct PokemonDetailsView: View {
         Marquee {
             Text("Name: \(pokemon.name)")
                 .font(.custom(Constants.Fonts.minecraft,
-                              size: 30))
+                              size: 44))
                 .fontWeight(.bold)
                 .foregroundStyle(.orange)
-                .background(.white)
-                .frame(width: Constants.Size.screenWidth * 1.3)
         }.marqueeDuration(6.0)
-            .frame(height: Constants.Size.screenHeight * 0.25)
+            .frame(height: Constants.Size.screenHeight * 0.18)
+            .background(.white)
         if let pokemon = viewModel.pokemon,
            let sprites = pokemon.sprites,
            let versions = sprites.versions,
