@@ -15,17 +15,20 @@ struct SearchBar: View {
         HStack {
             Image(Constants.Images.search)
                 .padding(.leading, 10)
-            TextField(placeholderText, text: $text)
+            TextField("search for pokemons", text: $text)
                 .textCase(.lowercase)
-                .font(Font.system(size: 16))
+                .font(Font.system(size: 18))
                 .padding(.horizontal, 10)
-                .foregroundStyle(.crayolaorange)
-        }
+                .foregroundColor(.crayolaorange)
+                .padding()
+        }.padding(.horizontal, 10)
         .frame(width: Constants.Size.screenWidth * 0.9,
-               height: 50)
-        .background(.white).opacity(0.8)
-        .cornerRadius(50)
-        .shadow(color: Color(.lavender).opacity(0.8),
-                radius: 1, x: 0, y: 4)
+               height: Constants.Size.screenWidth * 0.15)
+        .overlay {
+            RoundedRectangle(cornerRadius: 14)
+                .stroke(style: StrokeStyle(lineWidth: 4,
+                                           dash: [6]))
+                .foregroundColor(.greenyellow)
+        }
     }
 }

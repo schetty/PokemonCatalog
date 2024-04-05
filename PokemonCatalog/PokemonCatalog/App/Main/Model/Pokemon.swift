@@ -9,7 +9,8 @@ import Foundation
 import SwiftData
 
 // MARK: - Pokemon Statistics
-final class Pokemon: Identifiable {
+final class Pokemon: Identifiable, Hashable {
+    
     let abilities: [Ability]?
     let baseExperience: Int?
     let cries: Cries?
@@ -49,10 +50,17 @@ final class Pokemon: Identifiable {
         types = try container.decode([TypeElement].self, forKey: .types)
         weight = try container.decode(Int.self, forKey: .weight)
     }
+    
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+         return lhs.id == rhs.id
+     }
+     
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(id)
+     }
 }
 
 // separate all Codable coupling from the data object model
-
 extension Pokemon: Decodable {
     enum CodingKeys: String, CodingKey {
         case abilities

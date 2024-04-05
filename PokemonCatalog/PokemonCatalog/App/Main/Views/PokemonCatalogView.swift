@@ -20,6 +20,7 @@ struct PokemonCatalogView: View {
             } else {
                 SearchBar(text: $viewModel.searchText,
                           placeholderText: Constants.Strings.searchPokemon)
+ 
                 if let pokemons = viewModel.filteredPokemons {
                     ScrollViewReader { scrollView in
                         List {
@@ -72,7 +73,8 @@ struct PokemonCatalogView: View {
                     Text(Constants.Strings.noPokemon)
                 }
             }
-        }.task {
+        }.background(.lavender).ignoresSafeArea()
+        .task {
             await viewModel.loadPokemons()
             isLoading = false
         }
