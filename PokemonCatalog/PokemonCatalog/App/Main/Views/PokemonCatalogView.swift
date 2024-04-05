@@ -16,7 +16,7 @@ struct PokemonCatalogView: View {
         NavigationStack {
             SearchBar(text: $viewModel.searchText,
                       placeholderText: Constants.Strings.searchPokemon)
-            if let pokemons = viewModel.pokemonList?.results {
+            if let pokemons = viewModel.filteredPokemons {
                 List(pokemons, id: \.self) { pokemon in
                     PokeCell(pokemonName: pokemon.name, onShowDetails: {
                         selectedPokemon = pokemon

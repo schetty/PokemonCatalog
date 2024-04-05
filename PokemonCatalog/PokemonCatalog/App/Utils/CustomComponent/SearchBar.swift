@@ -16,7 +16,8 @@ struct SearchBar: View {
             Image(Constants.Images.search)
                 .padding(.leading, 10)
             TextField(placeholderText, text: $text)
-                .font(Font.subheadline)
+                .textCase(.lowercase)
+                .font(Font.system(size: 16))
                 .padding(.horizontal, 10)
                 .foregroundStyle(.crayolaorange)
         }
