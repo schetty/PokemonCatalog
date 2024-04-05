@@ -10,7 +10,6 @@ import SwiftUI
 
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList: PokemonList?
-    @Published var pokemonDetails: Pokemon?
     @Published var searchText = ""
     
     private let apiManager = APIManager()
@@ -23,17 +22,6 @@ class PokemonViewModel: ObservableObject {
             }
         } catch {
             print("Failed to fetch pokemons: \(error)")
-        }
-    }
-    
-    func loadPokemonDetails(url: String) async {
-        do {
-            let pokemonDetails = try await apiManager.fetchPokemonDetails(url: url)
-            DispatchQueue.main.async {
-                self.pokemonDetails = pokemonDetails
-            }
-        } catch {
-            print("Failed to fetch pokemon details: \(error)")
         }
     }
 }

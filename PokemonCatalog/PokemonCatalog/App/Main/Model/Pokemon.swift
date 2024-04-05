@@ -10,23 +10,23 @@ import Foundation
 
 // MARK: - Pokemon Statistics
 struct Pokemon: Identifiable {
-    let abilities: [Ability]
-    let baseExperience: Int
-    let cries: Cries
-    let forms: [Species]
-    let gameIndices: [GameIndex]
-    let height: Int
-    let id: Int
-    let isDefault: Bool
-    let locationAreaEncounters: String
-    let moves: [Move]
-    let name: String
-    let order: Int
-    let species: Species
-    let sprites: Sprites
-    let stats: [Stat]
-    let types: [TypeElement]
-    let weight: Int
+    let abilities: [Ability]?
+    let baseExperience: Int?
+    let cries: Cries?
+    let forms: [Species]?
+    let gameIndices: [GameIndex]?
+    let height: Int?
+    let id: Int?
+    let isDefault: Bool?
+    let locationAreaEncounters: String?
+    let moves: [Move]?
+    let name: String?
+    let order: Int?
+    let species: Species?
+    let sprites: Sprites?
+    let stats: [Stat]?
+    let types: [TypeElement]?
+    let weight: Int?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -68,9 +68,9 @@ extension Pokemon: Decodable {
 
 // MARK: - Ability
 struct Ability {
-    let ability: Species
-    let isHidden: Bool
-    let slot: Int
+    let ability: Species?
+    let isHidden: Bool?
+    let slot: Int?
 }
 
 extension Ability: Decodable {
@@ -83,23 +83,23 @@ extension Ability: Decodable {
 
 // MARK: - Species
 struct Species {
-    let name: String
-    let url: String
+    let name: String?
+    let url: String?
 }
 
 extension Species: Decodable {}
 
 // MARK: - Cries
 struct Cries {
-    let latest, legacy: String
+    let latest, legacy: String?
 }
 
 extension Cries: Decodable {}
 
 // MARK: - GameIndex
 struct GameIndex {
-    let gameIndex: Int
-    let version: Species
+    let gameIndex: Int?
+    let version: Species?
     
     init(gameIndex: Int, version: Species) {
         self.gameIndex = gameIndex
@@ -116,8 +116,8 @@ extension GameIndex: Decodable {
 
 // MARK: - Move
 struct Move {
-    let move: Species
-    let versionGroupDetails: [VersionGroupDetail]
+    let move: Species?
+    let versionGroupDetails: [VersionGroupDetail]?
 }
 
 extension Move: Decodable {
@@ -129,8 +129,8 @@ extension Move: Decodable {
 
 // MARK: - VersionGroupDetail
 struct VersionGroupDetail {
-    let levelLearnedAt: Int
-    let moveLearnMethod, versionGroup: Species
+    let levelLearnedAt: Int?
+    let moveLearnMethod, versionGroup: Species?
 }
 
 extension VersionGroupDetail: Decodable  {
@@ -143,8 +143,8 @@ extension VersionGroupDetail: Decodable  {
 
 // MARK: - GenerationV
 struct GenerationV {
-    let blackWhite: Sprites
-} 
+    let blackWhite: Sprites?
+}
 
 extension GenerationV: Decodable {
     enum CodingKeys: String, CodingKey {
@@ -154,7 +154,7 @@ extension GenerationV: Decodable {
 
 // MARK: - GenerationIv
 struct GenerationIv {
-    let diamondPearl, heartgoldSoulsilver, platinum: Sprites
+    let diamondPearl, heartgoldSoulsilver, platinum: Sprites?
 }
 
 extension GenerationIv: Decodable {
@@ -167,14 +167,14 @@ extension GenerationIv: Decodable {
 
 // MARK: - Versions
 struct Versions {
-    let generationI: GenerationI
-    let generationIi: GenerationIi
-    let generationIii: GenerationIii
-    let generationIv: GenerationIv
-    let generationV: GenerationV
-    let generationVi: [String: Home]
-    let generationVii: GenerationVii
-    let generationViii: GenerationViii
+    let generationI: GenerationI?
+    let generationIi: GenerationIi?
+    let generationIii: GenerationIii?
+    let generationIv: GenerationIv?
+    let generationV: GenerationV?
+    let generationVi: [String: Home]?
+    let generationVii: GenerationVii?
+    let generationViii: GenerationViii?
 }
 
 extension Versions: Decodable {
@@ -192,10 +192,10 @@ extension Versions: Decodable {
 
 // MARK: - Other
 struct Other {
-    let dreamWorld: DreamWorld
-    let home: Home
-    let officialArtwork: OfficialArtwork
-    let showdown: Sprites
+    let dreamWorld: DreamWorld?
+    let home: Home?
+    let officialArtwork: OfficialArtwork?
+    let showdown: Sprites?
 }
 
 extension Other: Decodable {
@@ -210,14 +210,14 @@ extension Other: Decodable {
 
 // MARK: - Sprites
 final class Sprites {
-    let backDefault, backFemale, backShiny: String
+    let backDefault, backFemale, backShiny: String?
     let backShinyFemale: String?
-    let frontDefault, frontFemale, frontShiny, frontShinyFemale: String
+    let frontDefault, frontFemale, frontShiny, frontShinyFemale: String?
     let other: Other?
     let versions: Versions?
     let animated: Sprites?
 
-    init(backDefault: String, backFemale: String, backShiny: String, backShinyFemale: String?, frontDefault: String, frontFemale: String, frontShiny: String, frontShinyFemale: String, other: Other?, versions: Versions?, animated: Sprites?) {
+    init(backDefault: String, backFemale: String?, backShiny: String?, backShinyFemale: String?, frontDefault: String?, frontFemale: String?, frontShiny: String?, frontShinyFemale: String?, other: Other?, versions: Versions?, animated: Sprites?) {
         self.backDefault = backDefault
         self.backFemale = backFemale
         self.backShiny = backShiny
@@ -260,8 +260,8 @@ extension  GenerationI: Decodable {
 
 // MARK: - RedBlue
 struct RedBlue {
-    let backDefault, backGray, backTransparent, frontDefault: String
-    let frontGray, frontTransparent: String
+    let backDefault, backGray, backTransparent, frontDefault: String?
+    let frontGray, frontTransparent: String?
 }
 
 extension RedBlue: Decodable {
@@ -277,16 +277,16 @@ extension RedBlue: Decodable {
 
 // MARK: - GenerationIi
 struct GenerationIi {
-    let crystal: Crystal
-    let gold, silver: Gold
+    let crystal: Crystal?
+    let gold, silver: Gold?
 }
 
 extension GenerationIi: Decodable {}
 
 // MARK: - Crystal
 struct Crystal {
-    let backDefault, backShiny, backShinyTransparent, backTransparent: String
-    let frontDefault, frontShiny, frontShinyTransparent, frontTransparent: String
+    let backDefault, backShiny, backShinyTransparent, backTransparent: String?
+    let frontDefault, frontShiny, frontShinyTransparent, frontTransparent: String?
 }
 
 extension Crystal: Decodable {
@@ -304,7 +304,7 @@ extension Crystal: Decodable {
 
 // MARK: - Gold
 struct Gold {
-    let backDefault, backShiny, frontDefault, frontShiny: String
+    let backDefault, backShiny, frontDefault, frontShiny: String?
     let frontTransparent: String?
 }
 
@@ -320,8 +320,8 @@ extension Gold: Decodable {
 
 // MARK: - GenerationIii
 struct GenerationIii {
-    let emerald: OfficialArtwork
-    let fireredLeafgreen, rubySapphire: Gold
+    let emerald: OfficialArtwork?
+    let fireredLeafgreen, rubySapphire: Gold?
 }
 
 extension GenerationIii: Decodable {
@@ -334,7 +334,7 @@ extension GenerationIii: Decodable {
 
 // MARK: - OfficialArtwork
 struct OfficialArtwork {
-    let frontDefault, frontShiny: String
+    let frontDefault, frontShiny: String?
 }
 
 extension OfficialArtwork: Decodable {
@@ -346,7 +346,7 @@ extension OfficialArtwork: Decodable {
 
 // MARK: - Home
 struct Home {
-    let frontDefault, frontFemale, frontShiny, frontShinyFemale: String
+    let frontDefault, frontFemale, frontShiny, frontShinyFemale: String?
 }
 
 extension Home: Decodable {
@@ -373,8 +373,8 @@ extension GenerationVii: Decodable {
 
 // MARK: - DreamWorld
 struct DreamWorld {
-    let frontDefault: String
-    let frontFemale: String
+    let frontDefault: String?
+    let frontFemale: String?
 }
 
 extension DreamWorld: Decodable {
@@ -386,14 +386,14 @@ extension DreamWorld: Decodable {
 
 // MARK: - GenerationViii
 struct GenerationViii {
-    let icons: DreamWorld
+    let icons: DreamWorld?
 }
 extension GenerationViii: Decodable {}
 
 // MARK: - Stat
 struct Stat {
-    let baseStat, effort: Int
-    let stat: Species
+    let baseStat, effort: Int?
+    let stat: Species?
 }
 
 extension Stat: Decodable {
@@ -405,8 +405,8 @@ extension Stat: Decodable {
 
 // MARK: - TypeElement
 struct TypeElement {
-    let slot: Int
-    let type: Species
+    let slot: Int?
+    let type: Species?
 }
 
 extension TypeElement: Decodable {}

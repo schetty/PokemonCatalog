@@ -19,6 +19,7 @@ struct Constants {
     
     struct Strings {
         static let noPokemon = "No pokemons 😞"
+        static let searchPokemon = "Search Pokemon"
     }
     
     struct Images {

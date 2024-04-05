@@ -22,7 +22,7 @@ struct SearchBar: View {
         }
         .frame(width: Constants.Size.screenWidth * 0.9,
                height: 50)
-        .background(.lavender).opacity(0.6)
+        .background(.lavender).opacity(0.8)
         .cornerRadius(50)
         .shadow(color: Color(.black).opacity(0.3),
                 radius: 1, x: 0, y: 4)

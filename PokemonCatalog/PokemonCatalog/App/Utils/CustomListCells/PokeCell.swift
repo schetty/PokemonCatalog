@@ -10,6 +10,7 @@ import SwiftUI
 struct PokeCell: View {
     @Environment(\.colorScheme) var colorScheme
     let pokemonName: String
+    var onShowDetails: () -> Void
     
     var body: some View {
         HStack {
@@ -28,6 +29,7 @@ struct PokeCell: View {
             .padding(8)
             .contentShape(Rectangle())
             .onTapGesture {
+                onShowDetails()
             }
     }
 }
