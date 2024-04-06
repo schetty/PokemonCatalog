@@ -7,21 +7,31 @@
 
 import SwiftUI
 
+enum PokeDeetsType: String {
+    case String
+    case Bool
+    case Int
+    case Array
+    case Cries
+    case Species
+    case Sprites
+}
+
 struct PokeDeetsCell: View {
     @Environment(\.colorScheme) var colorScheme
     
-    let statKey: String
-    let statValue: String
+    let type: PokeDeetsType
+
     
     var body: some View {
         HStack {
-            Text(statKey + ": ")
+            Text("key")
                 .font(Font.headline)
                 .foregroundColor(.asparagus)
                 .multilineTextAlignment(.leading)
                 .lineLimit(0)
                 .truncationMode(.tail)
-            Text(statValue)
+            Text("value")
                 .font(Font.headline)
                 .foregroundColor(.asparagus)
                 .multilineTextAlignment(.leading)
@@ -30,5 +40,4 @@ struct PokeDeetsCell: View {
             .padding(8)
             .contentShape(Rectangle())
     }
-    
 }

@@ -74,16 +74,16 @@ struct PokemonDetailsView: View {
             .background(.white)
         if let pokemon = viewModel.pokemon,
            let sprites = pokemon.sprites,
-           let versions = sprites.versions,
-           let genV = versions.generationV,
-           let blackWhite = genV.blackWhite,
-           let animated = blackWhite.animated,
-           let frontDefault = animated.frontDefault {
+           let other = sprites.other,
+           let home = other.home,
+           let frontDefault = home.frontDefault {
             AsyncImage(url: URL(string: frontDefault))
-                .frame(alignment: .center)
+                .frame(width: Constants.Size.screenWidth * 0.4,
+                       height: Constants.Size.screenHeight * 0.2,
+                       alignment: .center)
                 .padding(10)
             List(pokemonStatistics.sorted(by: <), id: \.key) { key, value in
-                PokeDeetsCell(statKey: key, statValue: value)
+                PokeDeetsCell(type: .String)
                     .listRowSeparator(.hidden)
                     .listRowBackground(
                         RoundedRectangle(cornerRadius: 21)
