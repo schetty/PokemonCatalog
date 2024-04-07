@@ -113,13 +113,6 @@
 			path = NetworkMonitor;
 			sourceTree = "<group>";
 		};
-		CED817AA2BC031F900C28A42 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		CEF4CF532BBDA4F70076F4CD = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				CE3AFE192BC1E19D00808895 /* NetworkMonitor */,
-				CED817AA2BC031F900C28A42 /* Extensions */,
 				CE0298CC2BBF58DA0095992C /* CustomComponent */,
 				CE0298C72BBF40890095992C /* CustomListCells */,
 				CE0298C42BBF40570095992C /* Style */,
