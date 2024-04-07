@@ -28,7 +28,6 @@ struct PokemonDetailsView: View {
         }
     }
     
-    
     @ViewBuilder
     private var pokemonDetailsView: some View {
         Marquee {

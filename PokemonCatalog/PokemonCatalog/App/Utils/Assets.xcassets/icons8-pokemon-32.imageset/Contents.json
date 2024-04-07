@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Poké_Ball_icon 1.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +11,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "Poké_Ball_icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

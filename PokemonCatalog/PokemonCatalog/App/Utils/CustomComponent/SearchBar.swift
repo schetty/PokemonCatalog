@@ -22,7 +22,7 @@ struct SearchBar: View {
                 .textCase(.lowercase)
                 .font(Font.system(size: 18))
                 .padding(.horizontal, 10)
-                .foregroundColor(.crayolaorange)
+                .foregroundColor(.reallyred)
                 .padding()
         }.padding(.horizontal, 10)
         .frame(width: Constants.Size.screenWidth * 0.9,
@@ -31,7 +31,7 @@ struct SearchBar: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(style: StrokeStyle(lineWidth: 4,
                                            dash: [6]))
-                .foregroundColor(.greenyellow)
+                .foregroundColor(.persiangreen)
         }
     }
 }
