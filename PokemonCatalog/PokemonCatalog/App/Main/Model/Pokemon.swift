@@ -82,7 +82,7 @@ struct Ability {
     let slot: Int?
 }
 
-extension Ability: Decodable {
+extension Ability: Decodable {    
     enum CodingKeys: String, CodingKey {
         case ability
         case isHidden = "is_hidden"
@@ -142,7 +142,7 @@ struct VersionGroupDetail {
     let moveLearnMethod, versionGroup: Species?
 }
 
-extension VersionGroupDetail: Decodable  {
+extension VersionGroupDetail: Decodable {
     enum CodingKeys: String, CodingKey {
         case levelLearnedAt = "level_learned_at"
         case moveLearnMethod = "move_learn_method"

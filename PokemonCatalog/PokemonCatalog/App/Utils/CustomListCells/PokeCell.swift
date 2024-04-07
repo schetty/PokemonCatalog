@@ -15,7 +15,9 @@ struct PokeCell: View {
     var body: some View {
         HStack {
             Image(Constants.Images.pokemonIcon32)
-                .foregroundStyle(.crayolaorange)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30)
             
             Text(pokemonName)
                 .font(Font.headline)

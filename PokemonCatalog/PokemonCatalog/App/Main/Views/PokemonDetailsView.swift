@@ -12,9 +12,7 @@ struct PokemonDetailsView: View {
     
     @StateObject private var viewModel: PokemonDetailsViewModel = PokemonDetailsViewModel()
     let pokemon: Result
-    
-    @State private var pokemonStatistics: [String: String] = [:]
-    
+        
     var body: some View {
         ZStack {
             LinearGradient(colors: [.white, .greenyellow, .asparagus, .crayolaorange],
@@ -26,38 +24,8 @@ struct PokemonDetailsView: View {
                 Spacer()
             }.task {
                 await viewModel.loadPokemonDetails(url: pokemon.url)
-                extractStatistics()
             }
         }
-    }
-    
-    private func extractStatistics() {
-        guard let pokemon = viewModel.pokemon else { return }
-        var dictionary: [String: String] = [:]
-        
-        if let name = pokemon.name {
-            dictionary["name"] = name
-        }
-        if let baseExperience = pokemon.baseExperience {
-            dictionary["base_experience"] = "\(baseExperience)"
-        }
-        if let height = pokemon.height {
-            dictionary["height"] = "\(height)"
-        }
-        if let weight = pokemon.weight {
-            dictionary["weight"] = "\(weight)"
-        }
-        if let order = pokemon.order {
-            dictionary["order"] = "\(order)"
-        }
-        if let isDefault = pokemon.isDefault {
-            dictionary["isDefault"] = "\(isDefault)"
-        }
-        if let species = pokemon.species,
-           let speciesName = species.name {
-            dictionary["species"] = "\(speciesName)"
-        }
-        pokemonStatistics = dictionary
     }
     
     
@@ -85,8 +53,13 @@ struct PokemonDetailsView: View {
             } placeholder: {
                 Color.gray.opacity(0.1)
             }
-            List(pokemonStatistics.sorted(by: <), id: \.key) { key, value in
-                PokeDeetsCell(type: .String)
+            List(viewModel.displayables.sorted(by: { $0.key < $1.key }), id: \.key) { i in
+                let key = i.key
+                let value = i.value
+                PokeDeetsCell(type: determineStatType(forKey: key,
+                                                      value: value),
+                              key: key,
+                              value: value)
                     .listRowSeparator(.hidden)
                     .listRowBackground(
                         RoundedRectangle(cornerRadius: 21)
@@ -112,6 +85,39 @@ struct PokemonDetailsView: View {
                 }
         }
     }
+    
+    //TODO : find a way to put this logic in the view model instead
+    private func determineStatType(forKey key: String, value: Any) -> StatValueType {
+        switch key {
+        case "abilities":
+            if let abilities = value as? [Ability] {
+                return .Abilities(abilities)
+            }
+        case "species":
+            if let species = value as? [Species] {
+                return .SpeciesArr(species)
+            }
+            if let species = value as? Species {
+                return .Species(species)
+            }
+        case "moves":
+            if let moves = value as? [Move] {
+                return .Moves(moves)
+            }
+        case "cry":
+            if let cries = value as? Cries {
+                return .Cries(cries)
+            }
+        default:
+            if let str = value as? String {
+                return .String(str)
+            } else if let int = value as? Int {
+                return .Int(int)
+            }
+        }
+        return .String("Unknown")
+    }
+
 }
 
 

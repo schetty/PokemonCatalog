@@ -14,6 +14,9 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             Image(Constants.Images.search)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30)
                 .padding(.leading, 10)
             TextField("search for pokemons", text: $text)
                 .textCase(.lowercase)
