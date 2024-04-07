@@ -77,11 +77,14 @@ struct PokemonDetailsView: View {
            let other = sprites.other,
            let home = other.home,
            let frontDefault = home.frontDefault {
-            AsyncImage(url: URL(string: frontDefault))
-                .frame(width: Constants.Size.screenWidth * 0.4,
-                       height: Constants.Size.screenHeight * 0.2,
-                       alignment: .center)
-                .padding(10)
+            AsyncImage(url: URL(string: frontDefault)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+            } placeholder: {
+                Color.gray.opacity(0.1)
+            }
             List(pokemonStatistics.sorted(by: <), id: \.key) { key, value in
                 PokeDeetsCell(type: .String)
                     .listRowSeparator(.hidden)
