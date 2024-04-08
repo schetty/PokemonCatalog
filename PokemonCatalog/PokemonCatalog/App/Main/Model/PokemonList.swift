@@ -5,7 +5,8 @@
 //
 
 import Foundation
-import SwiftData
+// TODO: use Swift Data to cache loaded pokemons locally
+//import SwiftData
 
 // MARK: - PokemonList
 

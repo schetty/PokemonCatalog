@@ -77,7 +77,8 @@ struct PokeDeetsCell: View {
                     .truncationMode(.tail)
             }
         }.frame(alignment: .leading)
-            .padding(8)
-            .contentShape(Rectangle())
+         .padding(8)
+         .contentShape(Rectangle())
+        
     }
 }

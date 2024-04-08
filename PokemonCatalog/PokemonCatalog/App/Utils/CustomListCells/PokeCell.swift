@@ -27,6 +27,8 @@ struct PokeCell: View {
                 .truncationMode(.tail)
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
+                .accessibilityLabel(pokemonName)
+                .accessibilityHint("Select pokemon to learn more details about \(pokemonName).")
         }.frame(alignment: .leading)
             .padding(8)
             .contentShape(Rectangle())
