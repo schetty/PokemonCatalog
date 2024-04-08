@@ -86,6 +86,12 @@ struct PokemonDetailsView: View {
     }
     
     //TODO : find a way to put this logic in the view model instead
+    /// - Parameters:
+    ///     - key: the string of the property from the Pokemon details model object
+    ///     - value: the value of the property of the Pokemon details model object that corresponds to the key.
+    ///
+    /// - Returns: A type from the enum `StatValueType` which determines how the ListCell will display the key & value data.
+    /// .
     private func determineStatType(forKey key: String, value: Any) -> StatValueType {
         switch key {
         case "abilities":
