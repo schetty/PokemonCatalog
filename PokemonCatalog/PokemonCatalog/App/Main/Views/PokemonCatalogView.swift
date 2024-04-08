@@ -34,11 +34,11 @@ struct PokemonCatalogView: View {
                 disconnectedView
             }
         }.task {
-                await viewModel.loadPokemons()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    isLoading = false
-                }
+            await viewModel.loadPokemons()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                isLoading = false
             }
+        }
     }
     
     @ViewBuilder
@@ -85,6 +85,12 @@ struct PokemonCatalogView: View {
         )
     }
     
+   
+    /// - Parameters:
+    ///     - index: The index of the row selected in the List that is displaying all pokemons.
+    ///     - pokemons: The list of pokemons which are used for comparing the total loaded pokemons count from the viewmodel.
+    ///        Handles the conditions for calling the loadMore() function to make infinite scrolling possible.
+    
     private func handleLoadMoreIfNeeded(index: Int, pokemons: [Result]) {
         if let list = viewModel.pokemonList {
             if !isLoading && index == pokemons.count - 1 && viewModel.loadedPokemons.count == pokemons.count {
@@ -97,6 +103,7 @@ struct PokemonCatalogView: View {
         }
     }
     
+    // Calls the viewModel.loadMorePokemons function for facilitating infinite scrolling.
     private func loadMore() {
         Task {
             isLoading = true
