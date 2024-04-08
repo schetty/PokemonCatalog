@@ -87,12 +87,12 @@
 			path = CustomListCells;
 			sourceTree = "<group>";
 		};
-		CE0298CC2BBF58DA0095992C /* CustomComponent */ = {
+		CE0298CC2BBF58DA0095992C /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
 				CE0298CD2BBF58F70095992C /* SearchBar.swift */,
 			);
-			path = CustomComponent;
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		CE0298DA2BC025270095992C /* Fonts */ = {
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CE3AFE192BC1E19D00808895 /* NetworkMonitor */,
-				CE0298CC2BBF58DA0095992C /* CustomComponent */,
+				CE0298CC2BBF58DA0095992C /* CustomComponents */,
 				CE0298C72BBF40890095992C /* CustomListCells */,
 				CE0298C42BBF40570095992C /* Style */,
 				CEF4CF762BBDD11F0076F4CD /* Constants.swift */,

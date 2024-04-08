@@ -18,7 +18,7 @@ struct SearchBar: View {
                 .scaledToFit()
                 .frame(width: 30, height: 30)
                 .padding(.leading, 10)
-            TextField("search for pokemons", text: $text)
+            TextField(Constants.Strings.searchPokemon, text: $text)
                 .textCase(.lowercase)
                 .font(Font.system(size: 18))
                 .padding(.horizontal, 10)

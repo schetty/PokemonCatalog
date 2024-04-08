@@ -20,6 +20,8 @@ struct Constants {
     struct Strings {
         static let noPokemon = "No pokemons 😞"
         static let searchPokemon = "Search Pokemon"
+        static let noNetwork = "No Internet Connection"
+        static let pleaseTryAgain = "Please check your connection and try again."
     }
     
     struct Images {
