@@ -25,7 +25,7 @@ class PokemonViewModel: ObservableObject {
     func loadPokemons(next: String? = nil) async {
         do {
             let pokemonList = try await APIManager.shared.fetchPokemons(next: next)
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.pokemonList = pokemonList
                 self.loadedPokemons += pokemonList?.results ?? []
             }
@@ -33,6 +33,7 @@ class PokemonViewModel: ObservableObject {
             print("Failed to fetch pokemons: \(error)")
         }
     }
+
     
     func loadMorePokemons(next: String) async {
         await loadPokemons(next: next)

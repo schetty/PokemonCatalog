@@ -10,7 +10,7 @@ import Marquee
 
 struct PokemonDetailsView: View {
     
-    @StateObject private var viewModel: PokemonDetailsViewModel = PokemonDetailsViewModel()
+    @StateObject private var viewModel = PokemonDetailsViewModel()
     let pokemon: Result
         
     var body: some View {

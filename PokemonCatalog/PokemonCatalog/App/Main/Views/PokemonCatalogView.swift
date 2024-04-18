@@ -10,7 +10,7 @@ import SwiftUI
 struct PokemonCatalogView: View {
     
     @State private var networkMonitor = NetworkMonitor()
-    @StateObject private var viewModel: PokemonViewModel = PokemonViewModel()
+    @StateObject private var viewModel = PokemonViewModel()
     @State private var selectedPokemon: Result?
     @State private var isLoading: Bool = true
     
@@ -92,14 +92,16 @@ struct PokemonCatalogView: View {
     ///        Handles the conditions for calling the loadMore() function to make infinite scrolling possible.
     
     private func handleLoadMoreIfNeeded(index: Int, pokemons: [Result]) {
-        if let list = viewModel.pokemonList {
-            if !isLoading && index == pokemons.count - 1 && viewModel.loadedPokemons.count == pokemons.count {
-                if list.count != pokemons.count {
-                    DispatchQueue.main.async {
-                        loadMore()
-                    }
-                }
-            }
+        guard let list = viewModel.pokemonList,
+              !isLoading,
+              index == pokemons.count - 1,
+              viewModel.loadedPokemons.count == pokemons.count,
+              list.count != pokemons.count else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            loadMore()
         }
     }
     

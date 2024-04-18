@@ -16,7 +16,7 @@ class PokemonDetailsViewModel: ObservableObject {
     func loadPokemonDetails(url: String) async {
         do {
             let pokemonDetails = try await APIManager.shared.fetchPokemonDetails(url: url)
-            DispatchQueue.main.async { [self] in
+            await MainActor.run {
                 self.pokemon = pokemonDetails
                 self.hashDisplayableData()
             }
