@@ -21,3 +21,4 @@ SwiftUI app with MVVM architecture.
 - figure out a better way to infinite scroll (ScrollView +  LazyVStack + onAppear is the best but also still bad option)
 - add more styling
 - persist the data more thoroughly and go deeper into pokemon stats
+- implement fuzzy search
